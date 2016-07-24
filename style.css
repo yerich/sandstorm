@@ -1,0 +1,169 @@
+@import 'https://fonts.googleapis.com/css?family=PT+Sans:400,400i,700,700i|Arima+Madurai';
+
+@keyframes collageScroll {
+  from { background-position: 0 0%; }
+  to { background-position: 0 -2283px; }
+}
+
+@keyframes darudeScroll {
+  from { background-position: 0 0%; }
+  to { background-position: 0 -225px; }
+}
+
+@keyframes inputScroll {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+a, a:visited { text-decoration: none; color: #CCC; }
+a:hover { text-decoration: underline; }
+
+html {
+
+}
+
+body {
+  height: 100%;
+  background-color: #030509;
+  background-image: url('images/collage.jpg');
+  animation-name: collageScroll;
+  animation-duration: 300s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  color: #E8E8E8;
+
+  text-align: center;
+  font-family: 'PT Sans', sans-serif;
+  overflow: hidden;
+}
+
+body.darude {
+  background-image: url('images/darude-sandstorm.jpg');
+  animation-name: darudeScroll;
+  background-size: auto 225px;
+  animation-duration: 40s;
+}
+
+.wrapper {
+  background: linear-gradient(to bottom, rgba(14, 10, 4, 1) 140px, rgba(14, 10, 4, 0.9) 600px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  min-height: 100%;
+}
+
+h1 {
+  font-family: 'Arima Madurai', cursive;
+  font-size: 60px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  color: #CCC;
+  text-shadow: 0 0 5px #000, 0 0 10px #000;
+}
+
+.logo { margin-top: 140px; }
+
+.subhead { font-style: italic; color: #777; margin-top: 0;}
+
+.form-wrapper { margin-top: 60px; }
+.form-wrapper .input-wrapper { position: relative; width: 400px; margin: 0 auto 30px;}
+.form-wrapper input { padding: 0 0 5px; font-size: 18px; background: 0; color: #DDD; border: 0; width: 400px;}
+.form-wrapper input:focus { outline: 0; }
+.form-wrapper input + span::before { content: ''; position: absolute; bottom: -1px; left: 0; width: 100%; height: 1px; background: #999; display: block; animation: inputScroll 300ms;}
+.form-wrapper input + span::after { content: ''; position: absolute; bottom: -1px; left: 0; width: 0%; height: 3px; background: #CCC; display: block; transition: width 300ms;}
+.form-wrapper input:focus + span::after { width: 100%; }
+
+.submit-wrapper { margin: 0 auto; width: 400px; text-align: right; }
+
+.suggestions-wrapper { position: absolute; left: 0; width: 100%;}
+.suggestions { display: none; width: 400px; margin: 0 auto; background: #363330; min-height: 100px;}
+.suggestions ul { margin: 0; padding: 0; list-style: none; }
+.suggestions li { margin: 0; border-bottom: 1px solid #444; padding: 10px 10px; display: block; text-align: left; position: relative;}
+.suggestions li.active { background: #494949; }
+.suggestions li:hover { background: #555; cursor: pointer; }
+.suggestions li img { position: absolute; top: 0; right: 0; height: 38px; }
+.suggestions .loading { display: block; padding: 10px; text-align: left; }
+
+.credits { position: absolute; left: 10px; bottom: 5px; color: #666; font-size: 12px;  }
+.credits a, .credits a:visited { color: #999; }
+
+.progress { display: none; }
+.progress span { display: block; font-size: 20px; color: #999;}
+
+.playlist { display: none; }
+.playlist h2 { margin-top: 40px; }
+
+.playlist-video { height: 100px; }
+
+.playlist-list {
+  height: 300px;
+  overflow: auto;
+  width: 400px;
+  margin: 30px auto;
+  text-align: left;
+  background: #111;
+}
+
+.playlist-list::-webkit-scrollbar {
+    width: 5px;
+}
+
+.playlist-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+}
+
+.playlist-list::-webkit-scrollbar-thumb {
+  background-color: #444;
+  outline: 1px solid #444;
+}
+
+.playlist-list .play-button { display: block; position: absolute; background: #222; padding-left: 5px; border-radius: 50%; left: 10px; top: 10px; line-height: 45px; font-size: 20px; width: 35px; text-align: center; height: 40px;}
+.playlist-list .play-button:hover { cursor: pointer; }
+.playlist-list .entry { position: relative; height: 60px; border-bottom: 1px solid #191919; color: #a5a5a5;}
+.playlist-list .entry.active::before { animation-iteration-count: infinite; position: absolute; content: ''; top: 0; left: 0; height: 60px; animation: inputScroll 224s linear; background: #333;}
+.playlist-list .title { line-height: 60px; left: 60px; position: relative;}
+.playlist-list .bg { width: 60px; height: 60px; position: absolute; top: 0; right: 0; background-image: url('./images/darude-sandstorm.jpg'); background-size: cover;}
+
+.spinner {
+  width: 100px;
+  height: 100px;
+
+  position: relative;
+  margin: 100px auto 25px;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: rgba(183, 143, 102, 0.53);
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}

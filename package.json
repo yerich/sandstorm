@@ -1,0 +1,9 @@
+{
+  "name": "@yerich/sandstorm",
+  "description": "Automatic Playlist Generator",
+  "version": "0.0.1",
+  "license": "MIT",
+  "dependencies": {
+    "normalize.css": "^4.2.0"
+  }
+}

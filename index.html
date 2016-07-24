@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>Playlist Generator</title>
+
+  <link rel="stylesheet" href="./node_modules/normalize.css/normalize.css" />
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+
+<body>
+
+<div class="wrapper splash">
+
+  <h1 class="logo">Sandstorm</h1>
+
+  <p class="subhead">Automatic Playlist Generator</p>
+
+  <div class="form-wrapper">
+  </div>
+
+  <div class="submit-wrapper">
+    <a href="javascript:void(0)" class="generate">Generate Playlist &raquo;</a>
+  </div>
+
+  <div class="progress">
+    <div class="spinner">
+      <div class="double-bounce1"></div>
+      <div class="double-bounce2"></div>
+    </div>
+
+    <span>Preparing the magic...</span>
+  </div>
+
+  <div class="playlist">
+    <div class="playlist-video">
+
+    </div>
+
+    <div class="playlist-list">
+
+    </div>
+    <a href="javascript:void(0)" class="generate-another">Generate Another Playlist</a>
+  </div>
+
+</div>
+
+<div class="suggestions-wrapper">
+  <div class="suggestions">
+  </div>
+</div>
+
+<div class="credits">
+  TerribleHack IV, University of Waterloo. Uses the <a href="http://last.fm">Last.fm</a> API. By <a href="http://yerich.net">Richard Ye</a>.
+</div>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="sandstorm.js"></script>
+
+</body>
+
+</html>
+
+
