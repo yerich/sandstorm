@@ -90,7 +90,7 @@ $(function() {
   }
 
   var resetVideo = function(e) {
-    var embed = '<iframe width="560" height="100" src="http://www.youtube.com/embed/4ZXPP7qMSz4?&autoplay=1&rel=0&loop=1&modestbranding=1&controls=0&hd=1&autohide=1" frameborder="0" allowfullscreen></iframe>'
+    var embed = '<iframe width="560" height="100" src="https://www.youtube.com/embed/4ZXPP7qMSz4?&autoplay=1&rel=0&loop=1&modestbranding=1&controls=0&hd=1&autohide=1" frameborder="0" allowfullscreen></iframe>'
     $('.playlist-video').html('');
     $('.playlist-list .entry').removeClass('active');
     setTimeout(function() {
